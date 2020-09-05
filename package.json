@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "export $(cat .env | xargs) && node ./build/server.js",
-    "build": "export $(cat .env | xargs) && gulp swagger && tsc && cp -R ./src/public ./build"
+    "build": "gulp swagger && tsc && cp -R ./src/public ./build"
   },
   "author": "",
   "license": "ISC",
