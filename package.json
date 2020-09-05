@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node ./build/server.js",
-    "build": "gulp swagger && tsc && cp -R ./src/public ./build"
+    "start": "export $(cat .env | xargs) && node ./build/server.js",
+    "build": "export $(cat .env | xargs) && gulp swagger && tsc && cp -R ./src/public ./build"
   },
   "author": "",
   "license": "ISC",

@@ -14,13 +14,21 @@ for development purpose Do step by step:
    npm i
    ```
 
-2. after modified `api/swagger/swagger.yaml` and put your api path in there
+2. first of all add `.env` file in root of project and put config in there
+
+   ```
+   ## env file
+   PORT=3000
+   CORS_ORIGIN=your site url
+   ```
+
+3. after modified `api/swagger/swagger.yaml` and put your api path in there
 
    ```
    npm run build
    ```
 
-3. start
+4. start
    ```
    npm start
    ## Node.js API server is listening on port 3000
@@ -28,6 +36,8 @@ for development purpose Do step by step:
    you can use `build` folder to served in server
 
 ## Docker
+
+modify Dockerfile and add your site url in `ENV CORS_ORIGIN=your site url`
 
 1. build image
    ```
