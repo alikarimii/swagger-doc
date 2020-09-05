@@ -1,0 +1,69 @@
+openapi: "3.0.0"
+info:
+  version: "1.0.0"
+  title: "api doc"
+  description: This is a sample api of ...
+  contact:
+    name: ali karimi
+    email: ali@bookingvila.com
+servers:
+  - url: https://bookingvila.com/api/v2
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /test:
+    post:
+      description: just for test
+      tags:
+        - test
+      requestBody:
+        description: enter your name
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+              required:
+                - name
+      responses:
+        "200":
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: boolean
+        "400":
+          description: test error
+          content:
+            application/jsom:
+              schema:
+                $ref: "#/components/schemas/errors"
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+  examples:
+    signin:
+      summary: sign in test
+      value:
+        mobile: mobile
+  schemas:
+    errors:
+      type: array
+      items:
+        type: object
+        properties:
+          message:
+            type: string
+
+tags:
+  - name: test
+    description: for test
