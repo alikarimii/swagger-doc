@@ -21,7 +21,7 @@ app.use(cors({
   credentials: true
 }) as any);
 app.use(compression() as any);
-app.use(helmet() as any);
+app.use(helmet());
 app.use("/", express.static(resolve(appRoot.path, "./build/public")));
 // all route
 route(app);

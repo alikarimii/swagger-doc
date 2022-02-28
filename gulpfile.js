@@ -4,7 +4,7 @@ var path = require("path");
 var fs = require("fs");
 
 task("swagger", async function () {
-  var doc = yaml.safeLoad(
+  var doc = yaml.load(
     fs.readFileSync(path.join(__dirname, "api/swagger/swagger.yaml"))
   );
   fs.writeFileSync(
