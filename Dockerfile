@@ -14,10 +14,6 @@ RUN npm ci --quiet && npm run build
 FROM node:12.14.1-alpine
 
 WORKDIR /usr/node/app
-ENV NODE_ENV=production
-ENV PORT=3000
-# put address of your site here
-ENV CORS_ORIGIN=https://bookingvila.com
 
 COPY package*.json ./
 RUN npm ci --quiet --only=production

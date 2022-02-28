@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "export $(cat .env | xargs) && node ./build/server.js",
+    "start": "node ./build/server.js",
     "build": "gulp swagger && tsc && cp -R ./src/public ./build"
   },
   "author": "",
