@@ -37,18 +37,18 @@ for development purpose Do step by step:
 
 ## Docker
 
-modify Dockerfile and add your site url in `ENV CORS_ORIGIN=your site url`
-
 1. build image
    ```
    git clone https://github.com/alikarimii/swagger-doc.git
    cd swagger-doc
-   npm i
-   docker build -t imageNameYouWant .
+   add env file
+   chmod 710 build.sh
+   ./build
    ```
 2. run image
    ```
-   docker run -d -p 3000:3000 imageNameYouWant
+   chmod 710 start.sh
+   ./start
    ```
 
 ## Contributing
